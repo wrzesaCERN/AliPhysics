@@ -1118,7 +1118,7 @@ bool AliFemtoESDTrackCut::IsDeuteronNSigma(float mom, float massTOFPDG,float sig
   }
   else{
     if(sigmaMass < 0){
-      if (TMath::Abs(nsigmaTPCD) < 30)
+      if (TMath::Abs(nsigmaTPCD) < fNsigma)
 	return true;
     }
     else if(sigmaMass > 0){
