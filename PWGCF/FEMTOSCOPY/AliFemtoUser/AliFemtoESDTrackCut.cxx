@@ -836,11 +836,11 @@ bool AliFemtoESDTrackCut::IsDeuteronTPCdEdx(float mom, float dEdx)
     if (dEdx < a4*mom+b4) return false;
   }
 
-  
+ /*
   if (!fNsigmaTPCTOF && (fNsigmaMass == -1)) {
     if (dEdx < a5*mom+b5) return false;
   }
-
+*/
   return true;
 
 }
@@ -1118,7 +1118,7 @@ bool AliFemtoESDTrackCut::IsDeuteronNSigma(float mom, float massTOFPDG,float sig
   }
   else{
     if(sigmaMass < 0){
-      if (TMath::Abs(nsigmaTPCD) < fNsigma)
+      if (TMath::Abs(nsigmaTPCD) < 30)
 	return true;
     }
     else if(sigmaMass > 0){
@@ -1249,5 +1249,6 @@ bool AliFemtoESDTrackCut::IsElectron(float nsigmaTPCE, float nsigmaTPCPi,float n
   else
      return true;
 }
+
 
 
